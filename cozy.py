@@ -386,7 +386,7 @@ class SimpleSearchApp(QMainWindow):
         shortcut_f1.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(0))
         self.addAction(shortcut_f1)
 
-        # 🔹 Shortcut pentru pagina F2 - Căutare versete
+        # 🔹 Shortcut pentru pagina F2 - Căutare versete.
         shortcut_f2 = QAction(self)
         shortcut_f2.setShortcut("F2")
         shortcut_f2.triggered.connect(lambda: self.stacked_widget.setCurrentIndex(1))
