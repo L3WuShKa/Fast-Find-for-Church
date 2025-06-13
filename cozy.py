@@ -191,8 +191,8 @@ class SimpleSearchApp(QMainWindow):
         self.setWindowTitle("Căutare Simplă - Cântări și Versete")
         self.setGeometry(100, 100, 800, 500)
 
-        # Setare temă premium cu glassmorphism
-        self.set_glassmorphism_theme()
+        # Setare temă ultra modernă
+        self.set_ultra_modern_theme()
 
         # 🔹 Stacked Widget pentru a gestiona paginile
         self.stacked_widget = QStackedWidget()
@@ -258,6 +258,62 @@ class SimpleSearchApp(QMainWindow):
                 background-color: rgba(68, 68, 68, 0.9);
             }
         """)
+
+    def set_ultra_modern_theme(self):
+        """Apply an ultra-modern dark theme using gradients and sleek colors."""
+        modern_style = """
+            QWidget {
+                font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+                color: #f1f1f1;
+                background-color: transparent;
+            }
+            QMainWindow {
+                background-color: qlineargradient(
+                    spread:pad, x1:0, y1:0, x2:1, y2:1,
+                    stop:0 #141414, stop:1 #232323);
+                border-radius: 12px;
+                border: 1px solid #2d2d2d;
+            }
+            QLineEdit, QListWidget, QFrame {
+                background-color: rgba(40, 40, 40, 0.85);
+                border: 1px solid #303030;
+                border-radius: 8px;
+                padding: 6px;
+            }
+            QListWidget::item {
+                padding: 6px;
+            }
+            QListWidget::item:hover {
+                background-color: #3a3a3a;
+            }
+            QListWidget::item:selected {
+                background-color: #005fb8;
+            }
+            QSlider::groove:horizontal {
+                height: 5px;
+                background-color: #2d2d2d;
+                border-radius: 2px;
+            }
+            QSlider::handle:horizontal {
+                background-color: #0078d7;
+                border: none;
+                width: 14px;
+                height: 14px;
+                margin: -5px 0;
+                border-radius: 7px;
+            }
+            QMenuBar {
+                background-color: transparent;
+            }
+            QMenuBar::item {
+                padding: 6px 15px;
+                background: transparent;
+            }
+            QMenuBar::item:selected {
+                background: #2d2d2d;
+            }
+        """
+        self.setStyleSheet(modern_style)
 
     def create_song_search_page(self):
         # 🔹 Pagina pentru căutare cântări
